@@ -1,0 +1,24 @@
+---
+layout: base
+---
+
+<head>
+  <link rel="stylesheet" href="/css/recentPosts.css" />
+</head>
+
+<div class="recentPostsContainer">
+  {{ content }}
+  <div class="posts">
+    <h2>Recent Posts</h2>
+    {% for article in collections.articles %} {% if page.url !=
+    article.data.page.url %}
+    <div class="article">
+      <a href="{{ article.data.page.url }}">
+        <h3 class="articleTitle">{{ article.data.title }}</h3>
+        <span class="articleCreated">{{ article.data.created }}</span>
+        <p class="articleDescription">{{ article.data.description }}</p>
+      </a>
+    </div>
+    {% endif %} {% endfor %}
+  </div>
+</div>

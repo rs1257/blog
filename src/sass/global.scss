@@ -1,4 +1,4 @@
-@use "./colours" as g;
+@use "./_colours" as g;
 
 body,
 html {
@@ -19,4 +19,13 @@ html {
   color: g.$white;
   padding: 10px;
   text-align: center;
+}
+
+.homeLink {
+  color: g.$green;
+  text-decoration: none;
+
+  &:hover {
+    color: g.$purple;
+  }
 }
