@@ -1,0 +1,50 @@
+---
+title: About
+permalink: index.html
+layout: base
+css: /css/home.css
+---
+
+<div class="layout">
+  <div class="main">
+    <h1 class="title">{{ title }}</h1>
+    <div class="about">
+      <p>
+        Hi, I am Ryan. I am a software engineer. I enjoy learning new
+        technologies and keeping up with the current trends.
+      </p>
+
+      <p>
+        I've used a range of different languages and technologies including:
+      </p>
+      <ul>
+        <li>JavaScript / TypeScript</li>
+        <li>Python</li>
+        <li>PHP</li>
+        <li>Java</li>
+
+        <li>Terraform</li>
+        <li>Azure</li>
+        <li>AWS</li>
+
+        <li>React</li>
+        <li>SQL</li>
+        <li>NOSQL</li>
+        <li>HTML</li>
+        <li>CSS / SCSS</li>
+      </ul>
+    </div>
+  </div>
+  <div class="posts">
+    <h2>Recent Posts</h2>
+    {% for article in collections.articles %}
+    <div class="article">
+      <a href="{{ article.data.page.url }}">
+        <h3 class="articleTitle">{{ article.data.title }}</h3>
+        <span class="articleCreated">{{ article.data.created }}</span>
+        <p class="articleDescription">{{ article.data.description }}</p>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>

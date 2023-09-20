@@ -1,0 +1,106 @@
+@use "./colours" as g;
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem 4rem;
+
+  .main {
+    width: 100%;
+
+    .title {
+      text-align: center;
+    }
+  }
+
+  .about {
+    padding-right: 2rem;
+
+    img {
+      height: auto;
+      width: auto;
+      max-width: 40%;
+      max-height: 40%;
+    }
+
+    p {
+      padding: 10px;
+      margin: 0;
+    }
+  }
+
+  .posts {
+    max-width: 500px;
+    width: 100%;
+
+    h2 {
+      text-align: center;
+    }
+
+    .article {
+      background: #201f29;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+
+      &:hover {
+        filter: brightness(120%);
+      }
+
+      a {
+        text-decoration: none;
+        color: g.$white;
+      }
+
+      -webkit-transition: 0.5s -webkit-filter linear;
+      -moz-transition: 0.5s -moz-filter linear;
+      -moz-transition: 0.5s filter linear;
+      -ms-transition: 0.5s -ms-filter linear;
+      -o-transition: 0.5s -o-filter linear;
+      transition: 0.5s filter linear, 0.5s -webkit-filter linear;
+    }
+
+    .articleDescription {
+      margin: 0;
+      padding-top: 5px;
+    }
+
+    .articleTitle {
+      margin: 0;
+    }
+
+    .articleCreated {
+      font-weight: 100;
+      font-size: 12px;
+      text-align: start;
+      display: inline-block;
+      width: 100%;
+    }
+
+    & > :nth-child(6n - 1) .articleTitle {
+      color: g.$green;
+    }
+
+    & > :nth-child(6n - 2) .articleTitle {
+      color: g.$light-blue;
+    }
+
+    & > :nth-child(6n - 3) .articleTitle {
+      color: g.$purple;
+    }
+
+    & > :nth-child(6n - 4) .articleTitle {
+      color: g.$pink;
+    }
+
+    & > :nth-child(6n - 5) .articleTitle {
+      color: g.$orange;
+    }
+
+    & > :nth-child(6n - 6) .articleTitle {
+      color: g.$yellow;
+    }
+  }
+}
