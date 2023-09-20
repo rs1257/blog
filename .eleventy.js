@@ -1,9 +1,29 @@
 const fs = require("fs");
 const NOT_FOUND_PATH = "_site/404.html";
+const Image = require("@11ty/eleventy-img");
 
 module.exports = function (eleventyConfig) {
   // static passthroughs
   eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("img");
+
+  eleventyConfig.addShortcode("image", async function (src, alt, sizes) {
+    console.log(src);
+    let metadata = await Image(src, {
+      widths: [300, 600],
+      formats: ["webp", "jpeg"],
+    });
+
+    let imageAttributes = {
+      alt,
+      sizes,
+      loading: "lazy",
+      decoding: "async",
+    };
+
+    // You bet we throw an error on a missing alt (alt="" works okay)
+    return Image.generateHTML(metadata, imageAttributes);
+  });
 
   eleventyConfig.setServerOptions({
     liveReload: true,
