@@ -9,6 +9,7 @@ layout: base
 <div class="recentPostsContainer">
   {{ content }}
   <div class="posts">
+    <!-- Only show 6 post - rest go to an archive page -->
     <h2>Recent Posts</h2>
     {% for article in collections.articles %} {% if page.url !=
     article.data.page.url %}
