@@ -8,7 +8,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("img");
 
   eleventyConfig.addShortcode("image", async function (src, alt, sizes) {
-    console.log(src);
     let metadata = await Image(src, {
       widths: [300, 600],
       formats: ["webp", "jpeg"],
