@@ -12,7 +12,7 @@ layout: base
     <!-- Only show 6 post - rest go to an archive page -->
     <h2>Recent Posts</h2>
     {% for article in collections.articles %} {% if page.url !=
-    article.data.page.url %}
+    article.data.page.url and article.data.created %}
     <div class="article">
       <a href="{{ article.data.page.url }}">
         <h3 class="articleTitle">{{ article.data.title }}</h3>

@@ -38,3 +38,18 @@ html {
   margin-bottom: 5px;
   color: g.$light-blue;
 }
+
+a {
+  color: g.$pink;
+}
+
+.tagContainer {
+  margin-bottom: 5px;
+
+  .tag {
+    background: g.$blue;
+    border-radius: 10px;
+    padding: 2px 5px;
+    margin: 2px 5px;
+  }
+}

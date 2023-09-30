@@ -5,9 +5,11 @@ tags: articles
 
 <div>
   <h1 class="blogTitle">{{ title }}</h1>
+  <div class="tagContainer">
+    {% for label in labels %}<span class="tag">{{ label }}</span>{% endfor %}
+  </div>
   <span>{{ created }}</span>
-
-  {{ content}}
+  {{ content }}
 
   <a class="link" href="/">Back to home</a>
 </div>
