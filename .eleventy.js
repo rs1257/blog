@@ -3,14 +3,11 @@ const NOT_FOUND_PATH = "_site/404.html";
 const Image = require("@11ty/eleventy-img");
 
 module.exports = function (eleventyConfig) {
-  // static passthroughs
-  eleventyConfig.addPassthroughCopy("src/css");
-  eleventyConfig.addPassthroughCopy("img");
-
   eleventyConfig.addShortcode("image", async function (src, alt, sizes) {
     let metadata = await Image(src, {
       widths: [300, 600],
       formats: ["webp", "jpeg"],
+      outputDir: "./_site/img",
     });
 
     let imageAttributes = {
